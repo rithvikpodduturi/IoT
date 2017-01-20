@@ -1,10 +1,3 @@
-/*
-This code should work to get warning cross the buzzer when something be closer than 0.5 meter
-Circuit is ultrasonic sensor and buzzer +5v and Arduino uno is used
-a_atef45@yahoo.com
-www.zerosnones.net
-+201153300223
-*/
 // Define pins for ultrasonic and buzzer
 int const trigPin = 10;
 int const echoPin = 9;
@@ -27,6 +20,7 @@ digitalWrite(trigPin, LOW);
 duration = pulseIn(echoPin, HIGH);
 // Distance is half the duration devided by 29.1 (from datasheet)
 distance = (duration/2) / 29.1;
+Serial.print(
 // if distance less than 0.5 meter and more than 0 (0 or less means over range)
 if (distance <= 50 && distance >= 0) {
 // Buzz
